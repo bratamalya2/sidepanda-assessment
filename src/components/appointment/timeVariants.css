@@ -1,0 +1,54 @@
+.time-variants-text {
+    color: #555770;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 21px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.time-variants-select {
+    display: flex;
+    height: 48px;
+    width: 90%;
+    padding: 8px 12px;
+    justify-content: space-between;
+    align-items: center;
+    -moz-appearance: none;
+    /* Firefox */
+    -webkit-appearance: none;
+    /* Safari and Chrome */
+    appearance: none;
+    background: url("../../assets/chevron-down.png") no-repeat 96.5% !important;
+    border-radius: 10px;
+    color: var(--Primary-Color, #378760);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 21px;
+    cursor: pointer;
+}
+
+.time-variants-option {
+    height: 48px;
+    padding: 8px 12px;
+    align-self: stretch;
+    border-radius: 10px;
+    border: 1px solid var(--Dark-Dark-4, #C7C9D9);
+    background: var(--Light-Light-3, #FAFAFC);
+    color: var(--Primary-Color, #378760);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 21px;
+}
+
+.time-variant-line-break {
+    width: 90%;
+    margin: 20px 0;
+    background-color: #C7C9D9;
+}

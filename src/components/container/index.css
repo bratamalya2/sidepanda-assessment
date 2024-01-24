@@ -1,0 +1,37 @@
+.container {
+    width: 64.44%;
+    min-height: 572px;
+    margin: 100px auto;
+    z-index: 20;
+    position: relative;
+}
+
+.top-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    min-height: 494px;
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .container {
+        width: 55%;
+    }
+
+    .top-container {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        width: 75%;
+    }
+}

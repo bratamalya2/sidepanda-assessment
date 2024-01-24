@@ -1,0 +1,22 @@
+.appointment-container {
+    padding: 40px;
+    width: 50%;
+    background-color: #FFFFFF;
+}
+
+@media screen and (max-width: 850px) {
+    .appointment-container {
+        width: 100%;
+        padding: 30px;
+        margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .appointment-container {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-top: 40px;
+    }
+}

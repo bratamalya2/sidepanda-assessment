@@ -1,0 +1,65 @@
+.date-table {
+    padding: 10px;
+    width: 100%;
+}
+
+.date-table-heading-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.date-table-heading {
+    display: flex;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex: 1 0 0;
+    align-self: stretch;
+    color: #378760;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.date-table-content-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.date-table-date {
+    display: flex;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex: 1 0 0;
+    align-self: stretch;
+    cursor: pointer;
+}
+
+.date-table-highlighted-date {
+    color: #FFF;
+    background-color: #378760;
+    border-radius: 99px;
+}
+
+.date-table-noncurrent-date {
+    color: grey;
+    cursor: default;
+}
+
+@media screen and (max-width: 500px) {
+    .date-table-date {
+        padding: 2px;
+    }
+
+    .date-table {
+        padding: 0px;
+    }
+}

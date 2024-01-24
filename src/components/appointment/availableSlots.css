@@ -1,0 +1,51 @@
+.available-slots-headline {
+    color: #555770;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 21px;
+    /* 175% */
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.available-slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #378760;
+    background: #FFF;
+    margin-bottom: 15px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 21px;
+}
+
+.available-slot-selected {
+    color: #FFF;
+    background-color: #378760;
+    justify-content: space-between;
+}
+
+.no-slots-availalbe-text {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 21px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+@media screen and (max-width: 500px) {
+    .available-slot {
+        padding: 8px 5px;
+        height: 36px;
+    }
+}
