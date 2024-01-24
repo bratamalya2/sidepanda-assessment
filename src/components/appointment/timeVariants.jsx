@@ -8,7 +8,7 @@ function TimeVariants({ intervalTypes, setCurrentInterval }) {
     useEffect(() => {
         if (currentVariant !== -1)
             setCurrentInterval(currentVariant);
-    }, [currentVariant]);
+    }, [currentVariant, setCurrentInterval]);
 
     useEffect(() => {
         if (intervalTypes.length > 0) {

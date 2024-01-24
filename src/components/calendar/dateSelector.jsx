@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 import './dateSelector.css';
 
@@ -18,7 +18,7 @@ function DateSelector({ currentDate, currentMonth, currentYear, setCurrentDate }
         return (year % 4 === 0 && year % 100 !== 0) || (year % 100 === 0 && year % 400 === 0);
     };
 
-    const setPrevMonthDetails = () => {
+    const setPrevMonthDetails = useCallback(() => {
         if (currentMonth === 0) {
             setPrevMonth(11);
             setPrevMonthYear(currentYear - 1);
@@ -27,9 +27,9 @@ function DateSelector({ currentDate, currentMonth, currentYear, setCurrentDate }
             setPrevMonth(currentMonth - 1);
             setPrevMonthYear(currentYear);
         }
-    };
+    }, [currentMonth, currentYear]);
 
-    const getNoOfDaysInPrevMonth = () => {
+    const getNoOfDaysInPrevMonth = useCallback(() => {
         if (isLeapYear(prevMonthYear) && prevMonth === 1)
             return 29;
         else if (!isLeapYear(prevMonthYear) && prevMonth === 1)
@@ -38,11 +38,11 @@ function DateSelector({ currentDate, currentMonth, currentYear, setCurrentDate }
             return 31;
         else
             return 30;
-    };
+    }, [prevMonth, prevMonthYear]);
 
     useEffect(() => {
         setPrevMonthDetails();
-    }, [currentMonth, currentYear]);
+    }, [currentMonth, currentYear, setPrevMonthDetails]);
 
     useEffect(() => {
         const d1 = new Date(currentYear, currentMonth, 1);
@@ -68,6 +68,7 @@ function DateSelector({ currentDate, currentMonth, currentYear, setCurrentDate }
         }
         else
             setEndDate(-1);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [prevMonth, prevMonthYear]);
 
     useEffect(() => {
@@ -79,7 +80,7 @@ function DateSelector({ currentDate, currentMonth, currentYear, setCurrentDate }
         }
         else
             setPrevMonthDays([]);
-    }, [startDate]);
+    }, [startDate, getNoOfDaysInPrevMonth]);
 
     useEffect(() => {
         if (endDate > -1) {
