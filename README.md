@@ -1,3 +1,10 @@
+### How to run the project?
+
+1. Clone the repo and open the cloned folder in terminal window
+2. Run "yarn install"
+3. After installation is over, run "yarn start"
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
