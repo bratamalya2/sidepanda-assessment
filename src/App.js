@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 import Container from './components/container';
 
@@ -37,7 +37,7 @@ function App() {
     }
   };
 
-  const setAvailableSlots = (currentDate) => {
+  const setAvailableSlots = useCallback((currentDate) => {
     const d = currentDate.getDate();
     const m = currentDate.getMonth();
     const y = currentDate.getFullYear();
@@ -61,7 +61,7 @@ function App() {
       }));
       setAvailableSlotIntervals(x.slots);
     }
-  };
+  }, [slotDetails]);
 
   const setAllIntervalVariants = (slotArr) => {
     const intervalVariants = [];
@@ -106,17 +106,13 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log(slotDetails);
     setAvailableSlots(new Date(currentYear, currentMonth, currentDate));
-  }, [slotDetails, currentDate, currentMonth, currentYear]);
+  }, [slotDetails, currentDate, currentMonth, currentYear, setAvailableSlots]);
 
   useEffect(() => {
     setAllIntervalVariants(availableSlotIntervals);
   }, [availableSlotIntervals]);
 
-  useEffect(() => {
-    console.log(availableSlotIntervals);
-  }, [availableSlotIntervals]);
 
   return (
     <div className='App'>
